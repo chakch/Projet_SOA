@@ -17,56 +17,8 @@
     <com.example.TweetProject.proxy-service_._UserGet>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._UserGet>
     <com.example.TweetProject.proxy-service_._GetUser>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._GetUser>
     <com.example.TweetProject.api_._tweet>capp/EnterpriseServiceBus</com.example.TweetProject.api_._tweet>
-    <com.wso2.training.PizzaShop.api_._pizzashop>capp/EnterpriseServiceBus</com.wso2.training.PizzaShop.api_._pizzashop>
-    <com.wso2.training.PizzaShop.task_._My_ESB_Task>capp/EnterpriseServiceBus</com.wso2.training.PizzaShop.task_._My_ESB_Task>
-    <com.wso2.training.PizzaShop.api_._JIRA_Connector_REST>capp/EnterpriseServiceBus</com.wso2.training.PizzaShop.api_._JIRA_Connector_REST>
     <com.example.TweetProject.proxy-service_._MultipleMessageProcess>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._MultipleMessageProcess>
-    <com.wso2.training.PizzaShop.proxy-service_._PizzaAdmin>capp/EnterpriseServiceBus</com.wso2.training.PizzaShop.proxy-service_._PizzaAdmin>
   </properties>
-  <dependencies>
-    <dependency>
-      <groupId>com.wso2.training.PizzaShop.proxy-service</groupId>
-      <artifactId>PizzaAdmin</artifactId>
-      <version>1.0.0</version>
-      <type>xml</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.TweetProject.proxy-service</groupId>
-      <artifactId>Test</artifactId>
-      <version>1.0.0</version>
-      <type>xml</type>
-    </dependency>
-    <dependency>
-      <groupId>com.wso2.training.PizzaShop.api</groupId>
-      <artifactId>pizzashop</artifactId>
-      <version>1.0.0</version>
-      <type>xml</type>
-    </dependency>
-    <dependency>
-      <groupId>com.wso2.training.PizzaShop.task</groupId>
-      <artifactId>My_ESB_Task</artifactId>
-      <version>1.0.0</version>
-      <type>xml</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.TweetProject.proxy-service</groupId>
-      <artifactId>TestProxy</artifactId>
-      <version>1.0.0</version>
-      <type>xml</type>
-    </dependency>
-    <dependency>
-      <groupId>com.wso2.training.PizzaShop.api</groupId>
-      <artifactId>JIRA_Connector_REST</artifactId>
-      <version>1.0.0</version>
-      <type>xml</type>
-    </dependency>
-    <dependency>
-      <groupId>com.example.TweetProject.api</groupId>
-      <artifactId>tweet</artifactId>
-      <version>1.0.0</version>
-      <type>xml</type>
-    </dependency>
-  </dependencies>
   <repositories>
     <repository>
       <releases>
