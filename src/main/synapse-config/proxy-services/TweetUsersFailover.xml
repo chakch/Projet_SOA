@@ -23,9 +23,6 @@
         </inSequence>
         <outSequence>
             <property name="ed" expression="get-property('axis2','From')" scope="axis2-client" type="STRING"/>
-            <log level="custom">
-                <property name="REMOTE_ADDR :" expression="get-property('ed')"/>
-            </log>
             <payloadFactory media-type="json" description="">
                 <format>{"Pseudo":"$1", "address":"$2" }</format>
                 <args>

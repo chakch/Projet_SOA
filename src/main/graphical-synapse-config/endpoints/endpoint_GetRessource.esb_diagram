@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:esb="http:///org/wso2/developerstudio/eclipse/gmf/esb" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmi:id="_zE_p0LChEeSxQcayEkTdVw" type="Esb" name="endpoint_GetRessource.esb_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Node" xmi:id="_zKxhsLChEeSxQcayEkTdVw" type="2001">
+    <children xmi:type="notation:DecorationNode" xmi:id="_zKyv0LChEeSxQcayEkTdVw" type="7001"/>
+    <children xmi:type="notation:Shape" xmi:id="_zaSkYLChEeSxQcayEkTdVw" type="3642" fontName="Segoe UI">
+      <children xmi:type="notation:BasicCompartment" xmi:id="_zaTLcLChEeSxQcayEkTdVw" type="7041">
+        <children xmi:type="notation:Node" xmi:id="_za_H8LChEeSxQcayEkTdVw" type="3656">
+          <children xmi:type="notation:DecorationNode" xmi:id="_za_vALChEeSxQcayEkTdVw" type="5164"/>
+          <styles xmi:type="notation:DescriptionStyle" xmi:id="_za_H8bChEeSxQcayEkTdVw"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_za_H8rChEeSxQcayEkTdVw" fontName="Segoe UI"/>
+          <styles xmi:type="notation:LineStyle" xmi:id="_za_H87ChEeSxQcayEkTdVw"/>
+          <element xmi:type="esb:LoadBalanceEndPoint" href="endpoint_GetRessource.esb#//@server/@children.0/@child"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_za_H9LChEeSxQcayEkTdVw" width="75" height="75"/>
+        </children>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_zaTLcbChEeSxQcayEkTdVw" showTitle="true"/>
+      </children>
+      <element xmi:type="esb:EndpointDiagram" href="endpoint_GetRessource.esb#//@server/@children.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zaSkYbChEeSxQcayEkTdVw" width="133" height="104"/>
+    </children>
+    <styles xmi:type="notation:DescriptionStyle" xmi:id="_zKxhsbChEeSxQcayEkTdVw"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_zKxhsrChEeSxQcayEkTdVw" fontName="Segoe UI"/>
+    <styles xmi:type="notation:LineStyle" xmi:id="_zKxhs7ChEeSxQcayEkTdVw"/>
+    <element xmi:type="esb:EsbServer" href="endpoint_GetRessource.esb#//@server"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_zKxhtLChEeSxQcayEkTdVw"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_zE_p0bChEeSxQcayEkTdVw"/>
+  <element xmi:type="esb:EsbDiagram" href="endpoint_GetRessource.esb#/"/>
+</notation:Diagram>

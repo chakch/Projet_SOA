@@ -9,20 +9,19 @@
                         <iterate continueParent="true" id="TweetIterator" preservePayload="true" attachPath="//ex:MultipleSend/ex:tweets" expression="//ex:MultipleSend/ex:tweets/ex:tweet" sequential="true">
                             <target>
                                 <sequence>
+                                    <property name="client_ip_address" expression="get-property('axis2','REMOTE_ADDR')" scope="default" type="STRING"/>
                                     <property xmlns:m0="http://services.samples" name="stockprop" expression="$body/ex:tweet" scope="default" type="STRING"/>
                                     <property name="uri.var.Pseudo" expression="//ex:pseudo/ex:name" scope="default" type="STRING"/>
                                     <payloadFactory media-type="xml">
                                         <format>
-                                            <tweet>$1</tweet>
+                                            <tweet>$1 from $2</tweet>
                                         </format>
                                         <args>
                                             <arg evaluator="xml" expression="//ex:MultipleSend/ex:tweets/ex:tweet"/>
+                                            <arg evaluator="xml" expression="get-property('client_ip_address')"/>
                                         </args>
                                     </payloadFactory>
                                     <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
-                                    <log>
-                                        <property name="uri.var.Pseudo" expression="//ex:pseudo/ex:name"/>
-                                    </log>
                                     <send>
                                         <endpoint>
                                             <http method="post" uri-template="http://192.168.192.101:8080/tweet/{uri.var.Pseudo}"/>
@@ -36,6 +35,19 @@
             </iterate>
         </inSequence>
         <outSequence>
+            <payloadFactory media-type="xml" description="">
+                <format>
+                    <MultipleSend xmlns="http://example.com/samples">
+                        <State>
+$1
+</State>
+                    </MultipleSend>
+                </format>
+                <args>
+                    <arg value="Success"/>
+                </args>
+            </payloadFactory>
+            <property name="messageType" value="application/xml" scope="axis2" type="STRING"/>
             <send/>
         </outSequence>
         <faultSequence/>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse" name="SecurityProxy" transports="https http" startOnLoad="true" trace="disable">
+    <target>
+        <inSequence>
+            <throttle id="group_id">
+                <policy>
+                    <wsp:Policy xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:id="WSO2MediatorThrottlingPolicy">
+                        <throttle:MediatorThrottleAssertion xmlns:throttle="http://www.wso2.org/products/wso2commons/throttle">
+                            <throttle:MaximumConcurrentAccess>10</throttle:MaximumConcurrentAccess>
+                            <wsp:Policy>
+                                <throttle:ID throttle:type="IP">other</throttle:ID>
+                                <wsp:Policy>
+                                    <throttle:Control>
+                                        <wsp:Policy>
+                                            <throttle:MaximumCount>1</throttle:MaximumCount>
+                                            <throttle:UnitTime>60000</throttle:UnitTime>
+                                            <throttle:ProhibitTimePeriod>60000</throttle:ProhibitTimePeriod>
+                                        </wsp:Policy>
+                                    </throttle:Control>
+                                </wsp:Policy>
+                            </wsp:Policy>
+                        </throttle:MediatorThrottleAssertion>
+                    </wsp:Policy>
+                </policy>
+                <onReject>
+                    <log level="custom">
+                        <property name="text" value="**Access Denied**"/>
+                    </log>
+                    <makefault version="soap11">
+                        <code xmlns:soap11Env="http://schemas.xmlsoap.org/soap/envelope/" value="soap11Env:VersionMismatch"/>
+                        <reason value="**Access Denied**"/>
+                    </makefault>
+                    <send/>
+                </onReject>
+                <onAccept>
+                    <send>
+                        <endpoint>
+                            <http method="get" uri-template="http://192.168.192.101:8080/tweet/{uri.var.pseudo}"/>
+                        </endpoint>
+                    </send>
+                </onAccept>
+            </throttle>
+        </inSequence>
+        <outSequence>
+            <log level="full"/>
+            <send/>
+        </outSequence>
+        <faultSequence>
+            <makefault version="soap11">
+                <code xmlns:soap11Env="http://schemas.xmlsoap.org/soap/envelope/" value="soap11Env:VersionMismatch"/>
+                <reason value="COULDN'T SEND THE MESSAGE TO THE SERVER."/>
+            </makefault>
+            <send/>
+        </faultSequence>
+    </target>
+</proxy>

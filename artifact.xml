@@ -14,4 +14,16 @@
     <artifact name="ApiTweetGet" groupId="com.example.TweetProject.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/endpoints/ApiTweetGet.xml</file>
     </artifact>
+    <artifact name="SetTweetIpProxy" groupId="com.example.TweetProject.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/SetTweetIpProxy.xml</file>
+    </artifact>
+    <artifact name="SecurityProxy" groupId="com.example.TweetProject.proxy-service" version="1.0.0" type="synapse/proxy-service" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/proxy-services/SecurityProxy.xml</file>
+    </artifact>
+    <artifact name="PostTweet" groupId="com.example.TweetProject.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/PostTweet.xml</file>
+    </artifact>
+    <artifact name="GetRessource" groupId="com.example.TweetProject.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/GetRessource.xml</file>
+    </artifact>
 </artifacts>

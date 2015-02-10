@@ -2,44 +2,75 @@
 <api xmlns="http://ws.apache.org/ns/synapse" name="ApiTweet" context="/tweet">
     <resource methods="DELETE POST GET" uri-template="/{pseudo}*">
         <inSequence>
-            <switch source="$axis2:HTTP_METHOD">
-                <case regex="GET">
-                    <filter xpath="$ctx:query.param.val">
-                        <then>
+            <throttle id="group_id">
+                <policy>
+                    <wsp:Policy xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" wsu:id="WSO2MediatorThrottlingPolicy">
+                        <throttle:MediatorThrottleAssertion xmlns:throttle="http://www.wso2.org/products/wso2commons/throttle">
+                            <throttle:MaximumConcurrentAccess>10</throttle:MaximumConcurrentAccess>
+                            <wsp:Policy>
+                                <throttle:ID throttle:type="IP">other</throttle:ID>
+                                <wsp:Policy>
+                                    <throttle:Control>
+                                        <wsp:Policy>
+                                            <throttle:MaximumCount>10</throttle:MaximumCount>
+                                            <throttle:UnitTime>60000</throttle:UnitTime>
+                                            <throttle:ProhibitTimePeriod>10000</throttle:ProhibitTimePeriod>
+                                        </wsp:Policy>
+                                    </throttle:Control>
+                                </wsp:Policy>
+                            </wsp:Policy>
+                        </throttle:MediatorThrottleAssertion>
+                    </wsp:Policy>
+                </policy>
+                <onReject>
+                    <makefault version="soap11">
+                        <code xmlns:soap11Env="http://schemas.xmlsoap.org/soap/envelope/" value="soap11Env:VersionMismatch"/>
+                        <reason expression="get-property('ERROR_MESSAGE')"/>
+                    </makefault>
+                    <property name="RESPONSE" value="true" scope="default" type="STRING"/>
+                    <send/>
+                </onReject>
+                <onAccept>
+                    <switch source="$axis2:HTTP_METHOD">
+                        <case regex="GET">
+                            <filter xpath="$ctx:query.param.val">
+                                <then>
+                                    <send>
+                                        <endpoint>
+                                            <http method="get" uri-template="http://192.168.192.101:8080/tweet/{query.param.type}/{query.param.val}"/>
+                                        </endpoint>
+                                    </send>
+                                </then>
+                                <else>
+                                    <send>
+                                        <endpoint>
+                                            <http method="get" uri-template="http://192.168.192.101:8080/tweet/{uri.var.pseudo}"/>
+                                        </endpoint>
+                                    </send>
+                                </else>
+                            </filter>
+                        </case>
+                        <case regex="POST">
+                            <log level="custom" separator=",">
+                                <property name="Message Flow" value="--- Order POST ---"/>
+                            </log>
                             <send>
                                 <endpoint>
-                                    <http method="get" uri-template="http://192.168.192.101:8080/tweet/{uri.var.pseudo}/{query.param.val}"/>
+                                    <http method="post" uri-template="http://192.168.192.101:8080/tweet/{uri.var.pseudo}"/>
                                 </endpoint>
                             </send>
-                        </then>
-                        <else>
+                        </case>
+                        <case regex="DELETE">
                             <send>
                                 <endpoint>
-                                    <http method="get" uri-template="http://192.168.192.101:8080/tweet/{uri.var.pseudo}"/>
+                                    <http method="delete" uri-template="http://192.168.192.101:8080/tweet/{uri.var.pseudo}"/>
                                 </endpoint>
                             </send>
-                        </else>
-                    </filter>
-                </case>
-                <case regex="POST">
-                    <log level="custom" separator=",">
-                        <property name="Message Flow" value="--- Order POST ---"/>
-                    </log>
-                    <send>
-                        <endpoint>
-                            <http method="post" uri-template="http://192.168.192.101:8080/tweet/{uri.var.pseudo}"/>
-                        </endpoint>
-                    </send>
-                </case>
-                <case regex="DELETE">
-                    <send>
-                        <endpoint>
-                            <http method="delete" uri-template="http://192.168.192.101:8080/tweet/{uri.var.pseudo}"/>
-                        </endpoint>
-                    </send>
-                </case>
-                <default/>
-            </switch>
+                        </case>
+                        <default/>
+                    </switch>
+                </onAccept>
+            </throttle>
         </inSequence>
         <outSequence>
             <send/>

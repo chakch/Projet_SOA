@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse" name="SetTweetIpProxy" transports="http https" startOnLoad="true" trace="disable">
+    <target>
+        <inSequence>
+            <property xmlns:m0="http://services.samples" name="stockprop" expression="$body/ex:tweet" scope="default" type="STRING"/>
+            <property name="uri.var.Pseudo" expression="//ex:pseudo/ex:name" scope="default" type="STRING"/>
+            <payloadFactory media-type="xml">
+                <format>
+                    <tweet>$1</tweet>
+                </format>
+                <args>
+                    <arg evaluator="xml" expression="//ex:MultipleSend/ex:tweets/ex:tweet"/>
+                </args>
+            </payloadFactory>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <log>
+                <property name="uri.var.Pseudo" expression="//ex:pseudo/ex:name"/>
+            </log>
+            <send>
+                <endpoint>
+                    <http method="get" uri-template="http://192.168.192.101:8080/tweet/users"/>
+                </endpoint>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </target>
+</proxy>
