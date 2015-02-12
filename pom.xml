@@ -9,16 +9,81 @@
   <name>TweetProject</name>
   <description>TweetProject</description>
   <properties>
-    <com.example.TweetProject.proxy-service_._TestProxy>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._TestProxy>
-    <artifact.types>jaggery/app=zip,service/rule=aar,lib/library/bundle=jar,synapse/message-processors=xml,synapse/endpointTemplate=xml,synapse/proxy-service=xml,synapse/message-store=xml,carbon/application=car,registry/resource=zip,lib/dataservice/validator=jar,synapse/endpoint=xml,web/application=war,synapse/sequence=xml,synapse/configuration=xml,lib/registry/handlers=jar,synapse/task=xml,service/meta=xml,webapp/jaxws=war,synapse/api=xml,cep/bucket=xml,bpel/workflow=zip,lib/registry/filter=jar,service/dataservice=dbs,synapse/local-entry=xml,synapse/priority-executor=xml,synapse/event-source=xml,synapse/template=xml,lib/carbon/ui=jar,service/axis2=aar,synapse/sequenceTemplate=xml,wso2/gadget=dar,lib/synapse/mediator=jar</artifact.types>
+    <com.example.TweetProject.endpoint_._GetRessource>capp/EnterpriseServiceBus</com.example.TweetProject.endpoint_._GetRessource>
+    <com.example.TweetProject.api_._PostTweet>capp/EnterpriseServiceBus</com.example.TweetProject.api_._PostTweet>
+    <com.example.TweetProject.proxy-service_._GetUser>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._GetUser>
+    <com.example.TweetProject.proxy-service_._SetTweetIpProxy>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._SetTweetIpProxy>
+    <com.example.TweetProject.proxy-service_._Rest2SoapBIS>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._Rest2SoapBIS>
     <CApp.type>bpel/workflow=zip,lib/registry/filter=jar,webapp/jaxws=war,lib/library/bundle=jar,service/dataservice=dbs,synapse/local-entry=xml,synapse/proxy-service=xml,carbon/application=car,registry/resource=zip,lib/dataservice/validator=jar,synapse/endpoint=xml,web/application=war,lib/carbon/ui=jar,service/axis2=aar,synapse/sequence=xml,synapse/configuration=xml,wso2/gadget=dar,lib/registry/handlers=jar,lib/synapse/mediator=jar,synapse/task=xml,synapse/api=xml,synapse/template=xml,synapse/message-store=xml,synapse/message-processors=xml</CApp.type>
+    <com.example.TweetProject.api_._ApiTweet>capp/EnterpriseServiceBus</com.example.TweetProject.api_._ApiTweet>
     <maven.test.skip>false</maven.test.skip>
+    <com.example.TweetProject.proxy-service_._TweetUsersFailover>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._TweetUsersFailover>
     <com.example.TweetProject.proxy-service_._Test>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._Test>
     <com.example.TweetProject.proxy-service_._UserGet>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._UserGet>
-    <com.example.TweetProject.proxy-service_._GetUser>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._GetUser>
-    <com.example.TweetProject.api_._tweet>capp/EnterpriseServiceBus</com.example.TweetProject.api_._tweet>
+    <artifact.types>jaggery/app=zip,service/rule=aar,lib/library/bundle=jar,synapse/message-processors=xml,synapse/endpointTemplate=xml,synapse/proxy-service=xml,synapse/message-store=xml,carbon/application=car,registry/resource=zip,lib/dataservice/validator=jar,synapse/endpoint=xml,web/application=war,synapse/sequence=xml,synapse/configuration=xml,lib/registry/handlers=jar,synapse/task=xml,service/meta=xml,webapp/jaxws=war,synapse/api=xml,cep/bucket=xml,bpel/workflow=zip,lib/registry/filter=jar,service/dataservice=dbs,synapse/local-entry=xml,synapse/priority-executor=xml,synapse/event-source=xml,synapse/template=xml,lib/carbon/ui=jar,service/axis2=aar,synapse/sequenceTemplate=xml,wso2/gadget=dar,lib/synapse/mediator=jar</artifact.types>
+    <com.example.TweetProject.proxy-service_._TestProxy>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._TestProxy>
+    <com.example.TweetProject.proxy-service_._ProxyIpGet>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._ProxyIpGet>
+    <com.example.TweetProject.proxy-service_._SecurityProxy>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._SecurityProxy>
     <com.example.TweetProject.proxy-service_._MultipleMessageProcess>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._MultipleMessageProcess>
+    <com.example.TweetProject.api_._tweet>capp/EnterpriseServiceBus</com.example.TweetProject.api_._tweet>
+    <com.example.TweetProject.proxy-service_._MultipleSendProxy>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._MultipleSendProxy>
   </properties>
+  <dependencies>
+    <dependency>
+      <groupId>com.example.TweetProject.api</groupId>
+      <artifactId>PostTweet</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.TweetProject.proxy-service</groupId>
+      <artifactId>SecurityProxy</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.TweetProject.proxy-service</groupId>
+      <artifactId>ProxyIpGet</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.TweetProject.proxy-service</groupId>
+      <artifactId>Rest2SoapBIS</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.TweetProject.proxy-service</groupId>
+      <artifactId>TweetUsersFailover</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.TweetProject.api</groupId>
+      <artifactId>ApiTweet</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.TweetProject.proxy-service</groupId>
+      <artifactId>MultipleSendProxy</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.TweetProject.endpoint</groupId>
+      <artifactId>GetRessource</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.TweetProject.proxy-service</groupId>
+      <artifactId>SetTweetIpProxy</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+  </dependencies>
   <repositories>
     <repository>
       <releases>

@@ -19,9 +19,10 @@
     <com.example.TweetProject.api_._ApiTweet>capp/EnterpriseServiceBus</com.example.TweetProject.api_._ApiTweet>
     <com.example.TweetProject.proxy-service_._UpdateID>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._UpdateID>
     <com.example.TweetProject.proxy-service_._Test>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._Test>
-    <com.example.TweetProject.proxy-service_._UserGet>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._UserGet>
     <com.example.TweetProject.proxy-service_._GetUser>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._GetUser>
+    <com.example.TweetProject.proxy-service_._UserGet>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._UserGet>
     <com.example.TweetProject.proxy-service_._MultipleSendProxy>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._MultipleSendProxy>
+    <com.example.TweetProject.proxy-service_._Rest2SoapBIS>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._Rest2SoapBIS>
     <com.example.TweetProject.api_._tweet>capp/EnterpriseServiceBus</com.example.TweetProject.api_._tweet>
     <com.example.TweetProject.proxy-service_._TweetUsersFailover>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._TweetUsersFailover>
     <com.example.TweetProject.proxy-service_._MultipleMessageProcess>capp/EnterpriseServiceBus</com.example.TweetProject.proxy-service_._MultipleMessageProcess>
@@ -35,13 +36,19 @@
     </dependency>
     <dependency>
       <groupId>com.example.TweetProject.proxy-service</groupId>
+      <artifactId>SecurityProxy</artifactId>
+      <version>1.0.0</version>
+      <type>xml</type>
+    </dependency>
+    <dependency>
+      <groupId>com.example.TweetProject.proxy-service</groupId>
       <artifactId>ProxyIpGet</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>
     <dependency>
       <groupId>com.example.TweetProject.proxy-service</groupId>
-      <artifactId>SecurityProxy</artifactId>
+      <artifactId>Rest2SoapBIS</artifactId>
       <version>1.0.0</version>
       <type>xml</type>
     </dependency>

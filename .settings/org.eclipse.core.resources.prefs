@@ -69,14 +69,12 @@ encoding//src/main/graphical-synapse-config/complex_endpoints/complex_endpoint_1
 encoding//src/main/graphical-synapse-config/complex_endpoints/complex_endpoint_1423593055659.esb_diagram=UTF-8
 encoding//src/main/graphical-synapse-config/complex_endpoints/complex_endpoint_1423593222164.esb=UTF-8
 encoding//src/main/graphical-synapse-config/complex_endpoints/complex_endpoint_1423593222164.esb_diagram=UTF-8
-encoding//src/main/graphical-synapse-config/endpoints/endpoint_ApiTweetGet.esb=UTF-8
-encoding//src/main/graphical-synapse-config/endpoints/endpoint_ApiTweetGet.esb_diagram=UTF-8
-encoding//src/main/graphical-synapse-config/endpoints/endpoint_GetRessource.esb=UTF-8
-encoding//src/main/graphical-synapse-config/endpoints/endpoint_GetRessource.esb_diagram=UTF-8
 encoding//src/main/graphical-synapse-config/proxy-services/proxy_MultipleSendProxy.esb=UTF-8
 encoding//src/main/graphical-synapse-config/proxy-services/proxy_MultipleSendProxy.esb_diagram=UTF-8
 encoding//src/main/graphical-synapse-config/proxy-services/proxy_ProxyIpGet.esb=UTF-8
 encoding//src/main/graphical-synapse-config/proxy-services/proxy_ProxyIpGet.esb_diagram=UTF-8
+encoding//src/main/graphical-synapse-config/proxy-services/proxy_Rest2SoapBIS.esb=UTF-8
+encoding//src/main/graphical-synapse-config/proxy-services/proxy_Rest2SoapBIS.esb_diagram=UTF-8
 encoding//src/main/graphical-synapse-config/proxy-services/proxy_SecurityProxy.esb=UTF-8
 encoding//src/main/graphical-synapse-config/proxy-services/proxy_SecurityProxy.esb_diagram=UTF-8
 encoding//src/main/graphical-synapse-config/proxy-services/proxy_SetTweetIpProxy.esb=UTF-8

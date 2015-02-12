@@ -34,7 +34,7 @@
                 <onAccept>
                     <send>
                         <endpoint>
-                            <http method="get" uri-template="http://192.168.192.101:8080/tweet/{uri.var.pseudo}"/>
+                            <http method="get" uri-template="http://54.187.143.36:8080/tweet/{uri.var.pseudo}"/>
                         </endpoint>
                     </send>
                 </onAccept>

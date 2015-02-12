@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<proxy xmlns="http://ws.apache.org/ns/synapse" name="Rest2SoapBIS" transports="https http" startOnLoad="true" trace="disable">
+    <target>
+        <inSequence>
+            <log>
+                <property name="BODY_AVANT" expression="$body"/>
+            </log>
+            <payloadFactory media-type="json" description="">
+                <format>{"handle":"$1","content":"$2"}</format>
+                <args>
+                    <arg evaluator="xml" expression="//handle"/>
+                    <arg evaluator="xml" expression="//content"/>
+                </args>
+            </payloadFactory>
+            <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
+            <log>
+                <property name="BODY_APRES" expression="$body"/>
+            </log>
+            <send>
+                <endpoint>
+                    <http method="post" uri-template="http://vps99972.ovh.net:5660/handle/tweets"/>
+                </endpoint>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </target>
+</proxy>

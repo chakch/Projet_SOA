@@ -24,7 +24,7 @@
                                     <property name="messageType" value="application/json" scope="axis2" type="STRING"/>
                                     <send>
                                         <endpoint>
-                                            <http method="post" uri-template="http://192.168.192.101:8080/tweet/{uri.var.Pseudo}"/>
+                                            <http method="post" uri-template="http://54.187.143.36:8080/tweet/{uri.var.Pseudo}"/>
                                         </endpoint>
                                     </send>
                                 </sequence>
