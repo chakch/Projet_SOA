@@ -37,14 +37,14 @@
                                 <then>
                                     <send>
                                         <endpoint>
-                                            <http method="get" uri-template="http://54.187.143.36:8080/tweet/{query.param.type}/{query.param.val}"/>
+                                            <http method="get" uri-template="http://54.187.143.36:8080/tweet//api/{query.param.type}/{query.param.val}"/>
                                         </endpoint>
                                     </send>
                                 </then>
                                 <else>
                                     <send>
                                         <endpoint>
-                                            <http method="get" uri-template="http://54.187.143.36:8080/tweet/{uri.var.pseudo}"/>
+                                            <http method="get" uri-template="http://54.187.143.36:8080/tweet//api/{uri.var.pseudo}"/>
                                         </endpoint>
                                     </send>
                                 </else>
@@ -56,14 +56,14 @@
                             </log>
                             <send>
                                 <endpoint>
-                                    <http method="post" uri-template="http://54.187.143.36:8080/tweet/{uri.var.pseudo}"/>
+                                    <http method="post" uri-template="http://54.187.143.36:8080/tweet//api/{uri.var.pseudo}"/>
                                 </endpoint>
                             </send>
                         </case>
                         <case regex="DELETE">
                             <send>
                                 <endpoint>
-                                    <http method="delete" uri-template="http://54.187.143.36:8080/tweet/{uri.var.pseudo}"/>
+                                    <http method="delete" uri-template="http://54.187.143.36:8080/tweet//api/{uri.var.pseudo}"/>
                                 </endpoint>
                             </send>
                         </case>

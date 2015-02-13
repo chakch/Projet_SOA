@@ -58,7 +58,7 @@
                       <outputConnector>
                         <outgoingLink target="//@server/@children.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@mediatorFlow/@children.0/@mediatorFlow/@children.2/@inputConnector"/>
                       </outputConnector>
-                      <valueExpression propertyValue="$body/ex:tweet" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F40000000000001770800000002000000027400026D30740017687474703A2F2F73657276696365732E73616D706C6573740002657874001A687474703A2F2F6578616D706C652E636F6D2F73616D706C657378"/>
+                      <valueExpression propertyValue="$body/ex:tweet" namespaces="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F4000000000000177080000000200000002740002657874001A687474703A2F2F6578616D706C652E636F6D2F73616D706C65737400026D30740017687474703A2F2F73657276696365732E73616D706C657378"/>
                     </children>
                     <children xsi:type="esb:PropertyMediator" propertyName="uri.var.Pseudo" valueType="EXPRESSION">
                       <inputConnector incomingLinks="//@server/@children.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@mediatorFlow/@children.0/@mediatorFlow/@children.1/@outputConnector/@outgoingLink"/>
@@ -98,7 +98,7 @@
                         <outgoingLink target="//@server/@children.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@mediatorFlow/@children.0/@mediatorFlow/@children.5/@mediatorFlow/@children.0/@inputConnector"/>
                       </endpointOutputConnector>
                       <mediatorFlow>
-                        <children xsi:type="esb:HTTPEndpoint" suspendMaximumDuration="9223372036854775807" suspendProgressionFactor="1.0" URITemplate="http://54.187.143.36:8080/tweet/{uri.var.Pseudo}" HttpMethod="POST">
+                        <children xsi:type="esb:HTTPEndpoint" suspendMaximumDuration="9223372036854775807" suspendProgressionFactor="1.0" URITemplate="http://54.187.143.36:8080/tweet/api/{uri.var.Pseudo}" HttpMethod="POST">
                           <reliableMessagingPolicy prettyName="ReliableMessagingPolicy Key" keyName="ReliableMessagingPolicy Key" keyValue="/default/key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000010000000078"/>
                           <securityPolicy prettyName="SecurityPolicy Key" keyName="SecurityPolicy Key" keyValue="/default/key" filters="ACED0005737200116A6176612E7574696C2E486173684D61700507DAC1C31660D103000246000A6C6F6164466163746F724900097468726573686F6C6478703F400000000000007708000000010000000078"/>
                           <inputConnector incomingLinks="//@server/@children.0/@container/@sequenceAndEndpointContainer/@mediatorFlow/@children.1/@mediatorFlow/@children.0/@mediatorFlow/@children.5/@endpointOutputConnector/@outgoingLink"/>
